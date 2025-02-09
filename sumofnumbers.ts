@@ -15,17 +15,18 @@ function sumWhile(arr: number[]): number {
   let i = 0;
   while (i < arr.length) {
     total += arr[i];
+    i++;
   }
   return total;
 }
 
 console.log(sumWhile(myArr));
 
-function sumRecurse(arr: number[], length: number): number {
+function sumRecurse(arr: number[]): number {
   if (arr.length === 0) {
     return 0;
   }
-  return sumRecurse(arr, length - 1) + arr[length - 1];
+  return sumRecurse(arr, arr.length - 1) + arr[arr.length - 1];
 }
 
 console.log(sumRecurse(myArr, myArr.length));
